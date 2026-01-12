@@ -26,7 +26,8 @@ Error generating stack: `+a.message+`
               text-center\r
             `,children:[rt.jsxs("h1",{className:`\r
                 mb-4\r
-                text-8xl font-semibold leading-none\r
+                sm:text-8xl\r
+                text-7xl font-semibold leading-none\r
               `,children:[c.main.temp,"°C"]}),rt.jsx("h2",{className:`\r
                 mb-7\r
                 text-4xl\r
@@ -36,24 +37,30 @@ Error generating stack: `+a.message+`
                   flex\r
                   items-center justify-center gap-4\r
                 `,children:[rt.jsx("i",{className:`\r
-                    text-2xl\r
+                    sm:text-2xl\r
+                    text-xl\r
                     opacity-80\r
                     fa-solid fa-water\r
                   `}),rt.jsxs("div",{children:[rt.jsxs("p",{className:`\r
-                      text-2xl\r
+                      sm:text-2xl\r
+                      text-[15.5px]\r
                     `,children:[c.main.humidity," %"]}),rt.jsx("p",{className:`\r
-                      text-lg\r
+                      sm:text-lg\r
+                      text-[13px]\r
                     `,children:"Humidity"})]})]}),rt.jsxs("div",{className:`\r
                   flex\r
                   items-center gap-3\r
                 `,children:[rt.jsx("i",{className:`\r
-                    text-2xl\r
+                    sm:text-2xl\r
+                    text-xl\r
                     opacity-80\r
                     fa-solid fa-wind\r
                   `}),rt.jsxs("div",{children:[rt.jsxs("p",{className:`\r
-                      text-2xl\r
+                      sm:text-2xl\r
+                      text-[15.5px]\r
                     `,children:[c.wind.speed," Km/h"]}),rt.jsx("p",{className:`\r
-                      text-lg\r
+                      sm:text-lg\r
+                      text-[13px]\r
                     `,children:"Wind Speed"})]})]})]})})}function s1(){const[c,s]=qn.useState(""),[o,f]=qn.useState(null),[d,v]=qn.useState(""),S=async()=>{try{v("");const z=await Dt.get(`${n1}?q=${c.trim()}&appid=${u1}&units=metric`);f(z.data)}catch(z){Dt.isAxiosError(z)?v(z.response?.data.message):console.log("Lỗi ko xác định!")}};return qn.useEffect(()=>{if(!c.trim()){f(null),v("");return}const z=setTimeout(()=>{S()},500);return()=>clearTimeout(z)},[c]),rt.jsx("div",{className:`\r
         flex\r
         h-screen\r
